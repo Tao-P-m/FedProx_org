@@ -1,5 +1,6 @@
 import numpy as np
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior() 
 
 from flearn.utils.model_utils import batch_data, batch_data_multiple_iters
 from flearn.utils.tf_utils import graph_size
@@ -36,7 +37,7 @@ class Model(object):
         """Model function for Logistic Regression."""
         features = tf.placeholder(tf.float32, shape=[None, 60], name='features')
         labels = tf.placeholder(tf.int64, shape=[None,], name='labels')
-        logits = tf.layers.dense(inputs=features, units=self.num_classes, kernel_regularizer=tf.contrib.layers.l2_regularizer(0.001))
+        logits = tf.layers.dense(inputs=features, units=self.num_classes, kernel_regularizer=tf.keras.regularizers.l2(0.001))
         predictions = {
             "classes": tf.argmax(input=logits, axis=1),
             "probabilities": tf.nn.softmax(logits, name="softmax_tensor")
@@ -79,10 +80,11 @@ class Model(object):
         for _ in range(num_epochs):
             for X, y in batch_data(data, batch_size):
                 with self.graph.as_default():
-                    self.sess.run(self.train_op, feed_dict={self.features: X, self.labels: y})
+                    _, loss_local = self.sess.run([self.train_op, self.loss], feed_dict={self.features: X, self.labels: y})
         soln = self.get_params()
         comp = num_epochs * (len(data['y'])//batch_size) * batch_size * self.flops
-        return soln, comp
+        #print("If use this mclr from synthetic...", loss_local) Oui!
+        return soln, comp, loss_local
 
     def solve_iters(self, data, num_iters=1, batch_size=32):
         '''Solves local optimization problem'''

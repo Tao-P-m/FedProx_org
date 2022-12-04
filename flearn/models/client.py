@@ -25,10 +25,10 @@ class Client(object):
 
     def solve_grad(self):
         '''get model gradient with cost'''
-        bytes_w = self.model.size
+        bytes_w = self.model.size # graph size in bytes
         grads = self.model.get_gradients(self.train_data)
         comp = self.model.flops * self.num_samples
-        bytes_r = self.model.size
+        bytes_r = self.model.size # graph size in bytes 
         return ((self.num_samples, grads), (bytes_w, comp, bytes_r))
 
     def solve_inner(self, num_epochs=1, batch_size=10):
@@ -36,16 +36,16 @@ class Client(object):
         
         Return:
             1: num_samples: number of samples used in training
-            1: soln: local optimization solution
+            1: soln: local optimization solution 
             2: bytes read: number of bytes received
             2: comp: number of FLOPs executed in training process
             2: bytes_write: number of bytes transmitted
         '''
 
         bytes_w = self.model.size
-        soln, comp = self.model.solve_inner(self.train_data, num_epochs, batch_size)
-        bytes_r = self.model.size
-        return (self.num_samples, soln), (bytes_w, comp, bytes_r)
+        soln, comp, loss = self.model.solve_inner(self.train_data, num_epochs, batch_size) # flearn/models/${DATASET}/mclr.py
+        bytes_r = self.model.size # model size post-solve_inner
+        return (self.num_samples, soln), (bytes_w, comp, bytes_r), loss
 
     def solve_iters(self, num_iters=1, batch_size=10):
         '''Solves local optimization problem
@@ -60,7 +60,7 @@ class Client(object):
 
         bytes_w = self.model.size
         soln, comp = self.model.solve_iters(self.train_data, num_iters, batch_size)
-        bytes_r = self.model.size
+        bytes_r = self.model.size # model size after local optimization update
         return (self.num_samples, soln), (bytes_w, comp, bytes_r)
 
     def train_error_and_loss(self):
@@ -75,5 +75,6 @@ class Client(object):
             tot_correct: total #correct predictions
             test_samples: int
         '''
+        #print("see: eval_data", self.eval_data)
         tot_correct, loss = self.model.test(self.eval_data)
         return tot_correct, self.test_samples

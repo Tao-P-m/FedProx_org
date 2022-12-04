@@ -1,0 +1,776 @@
+PYTHONPATH
+2022-11-17 19:58:53.059258: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.10.1
+WARNING:tensorflow:From /home/aig/.conda/envs/tfl/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Arguments:
+	         Jmax : 50
+	            L : 40
+	            M : 10
+	     MC_trial : 50
+	            N : 5
+	          SNR : 90
+	   batch_size : 10
+	      dataset : synthetic_1_1
+	 drop_percent : 0.1
+	   eval_every : 1
+	learning_rate : 0.0001
+	        model : mclr
+	 model_params : (10,)
+	           mu : 0
+	          nit : 100
+	   num_epochs : 20
+	    num_iters : 1
+	   num_rounds : 200
+	    optimizer : fedavg
+	         seed : 0
+	          set : 2
+	          tau : 1
+	    threshold : 0.01
+	      verbose : 0
+Using Federated avg to Train
+/home/aig/.conda/envs/tfl/lib/python3.9/site-packages/tensorflow/python/keras/legacy_tf_layers/core.py:171: UserWarning: `tf.layers.dense` is deprecated and will be removed in a future version. Please use `tf.keras.layers.Dense` instead.
+  warnings.warn('`tf.layers.dense` is deprecated and '
+/home/aig/.conda/envs/tfl/lib/python3.9/site-packages/tensorflow/python/keras/engine/base_layer_v1.py:1719: UserWarning: `layer.apply` is deprecated and will be removed in a future version. Please use `layer.__call__` method instead.
+  warnings.warn('`layer.apply` is deprecated and '
+2022-11-17 19:58:55.702426: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2022-11-17 19:58:55.703843: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcuda.so.1
+2022-11-17 19:58:55.814086: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 0 with properties: 
+pciBusID: 0000:18:00.0 name: NVIDIA GeForce RTX 3090 computeCapability: 8.6
+coreClock: 1.695GHz coreCount: 82 deviceMemorySize: 23.70GiB deviceMemoryBandwidth: 871.81GiB/s
+2022-11-17 19:58:55.814877: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 1 with properties: 
+pciBusID: 0000:3b:00.0 name: NVIDIA GeForce RTX 3090 computeCapability: 8.6
+coreClock: 1.695GHz coreCount: 82 deviceMemorySize: 23.70GiB deviceMemoryBandwidth: 871.81GiB/s
+2022-11-17 19:58:55.815603: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 2 with properties: 
+pciBusID: 0000:86:00.0 name: NVIDIA GeForce RTX 3090 computeCapability: 8.6
+coreClock: 1.695GHz coreCount: 82 deviceMemorySize: 23.70GiB deviceMemoryBandwidth: 871.81GiB/s
+2022-11-17 19:58:55.816318: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 3 with properties: 
+pciBusID: 0000:af:00.0 name: NVIDIA GeForce RTX 3090 computeCapability: 8.6
+coreClock: 1.695GHz coreCount: 82 deviceMemorySize: 23.70GiB deviceMemoryBandwidth: 871.81GiB/s
+2022-11-17 19:58:55.816371: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.10.1
+2022-11-17 19:58:55.876238: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublas.so.10
+2022-11-17 19:58:55.876367: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublasLt.so.10
+2022-11-17 19:58:55.882108: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcufft.so.10
+2022-11-17 19:58:55.883321: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcurand.so.10
+2022-11-17 19:58:55.889140: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusolver.so.10
+2022-11-17 19:58:55.892395: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusparse.so.10
+2022-11-17 19:58:55.953571: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudnn.so.7
+2022-11-17 19:58:55.959245: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1862] Adding visible gpu devices: 0, 1, 2, 3
+2022-11-17 19:58:55.960635: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 AVX512F FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-11-17 19:58:55.962844: I tensorflow/compiler/jit/xla_gpu_device.cc:99] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2022-11-17 19:58:56.486014: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 0 with properties: 
+pciBusID: 0000:18:00.0 name: NVIDIA GeForce RTX 3090 computeCapability: 8.6
+coreClock: 1.695GHz coreCount: 82 deviceMemorySize: 23.70GiB deviceMemoryBandwidth: 871.81GiB/s
+2022-11-17 19:58:56.486477: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 1 with properties: 
+pciBusID: 0000:3b:00.0 name: NVIDIA GeForce RTX 3090 computeCapability: 8.6
+coreClock: 1.695GHz coreCount: 82 deviceMemorySize: 23.70GiB deviceMemoryBandwidth: 871.81GiB/s
+2022-11-17 19:58:56.486877: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 2 with properties: 
+pciBusID: 0000:86:00.0 name: NVIDIA GeForce RTX 3090 computeCapability: 8.6
+coreClock: 1.695GHz coreCount: 82 deviceMemorySize: 23.70GiB deviceMemoryBandwidth: 871.81GiB/s
+2022-11-17 19:58:56.487274: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 3 with properties: 
+pciBusID: 0000:af:00.0 name: NVIDIA GeForce RTX 3090 computeCapability: 8.6
+coreClock: 1.695GHz coreCount: 82 deviceMemorySize: 23.70GiB deviceMemoryBandwidth: 871.81GiB/s
+2022-11-17 19:58:56.487314: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.10.1
+2022-11-17 19:58:56.487348: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublas.so.10
+2022-11-17 19:58:56.487363: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublasLt.so.10
+2022-11-17 19:58:56.487378: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcufft.so.10
+2022-11-17 19:58:56.487393: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcurand.so.10
+2022-11-17 19:58:56.487408: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusolver.so.10
+2022-11-17 19:58:56.487423: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusparse.so.10
+2022-11-17 19:58:56.487438: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudnn.so.7
+2022-11-17 19:58:56.492208: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1862] Adding visible gpu devices: 0, 1, 2, 3
+2022-11-17 19:58:56.492259: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.10.1
+2022-11-17 20:34:12.121717: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1261] Device interconnect StreamExecutor with strength 1 edge matrix:
+2022-11-17 20:34:12.122135: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1267]      0 1 2 3 
+2022-11-17 20:34:12.122152: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1280] 0:   N N N N 
+2022-11-17 20:34:12.122157: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1280] 1:   N N N N 
+2022-11-17 20:34:12.122162: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1280] 2:   N N N N 
+2022-11-17 20:34:12.122167: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1280] 3:   N N N N 
+2022-11-17 20:34:12.126684: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1406] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 22430 MB memory) -> physical GPU (device: 0, name: NVIDIA GeForce RTX 3090, pci bus id: 0000:18:00.0, compute capability: 8.6)
+2022-11-17 20:34:12.128702: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1406] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 22430 MB memory) -> physical GPU (device: 1, name: NVIDIA GeForce RTX 3090, pci bus id: 0000:3b:00.0, compute capability: 8.6)
+2022-11-17 20:34:12.130557: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1406] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:2 with 22430 MB memory) -> physical GPU (device: 2, name: NVIDIA GeForce RTX 3090, pci bus id: 0000:86:00.0, compute capability: 8.6)
+2022-11-17 20:34:12.132267: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1406] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:3 with 22430 MB memory) -> physical GPU (device: 3, name: NVIDIA GeForce RTX 3090, pci bus id: 0000:af:00.0, compute capability: 8.6)
+2022-11-17 20:34:12.140632: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:196] None of the MLIR optimization passes are enabled (registered 0 passes)
+2022-11-17 20:34:12.144892: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 2400000000 Hz
+WARNING:tensorflow:From /home/aig/.conda/envs/tfl/lib/python3.9/site-packages/tensorflow/python/profiler/internal/flops_registry.py:142: tensor_shape_from_node_def_name (from tensorflow.python.framework.graph_util_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.compat.v1.graph_util.tensor_shape_from_node_def_name`
+Incomplete shape.
+Incomplete shape.
+
+=========================Options=============================
+-max_depth                  10000
+-min_bytes                  0
+-min_peak_bytes             0
+-min_residual_bytes         0
+-min_output_bytes           0
+-min_micros                 0
+-min_accelerator_micros     0
+-min_cpu_micros             0
+-min_params                 0
+-min_float_ops              1
+-min_occurrence             0
+-step                       -1
+-order_by                   float_ops
+-account_type_regexes       .*
+-start_name_regexes         .*
+-trim_name_regexes          
+-show_name_regexes          .*
+-hide_name_regexes          
+-account_displayed_op_only  true
+-select                     float_ops
+-output                     stdout:
+
+==================Model Analysis Report======================
+Incomplete shape.
+Incomplete shape.
+
+Doc:
+scope: The nodes in the model graph are organized by their names, which is hierarchical like filesystem.
+flops: Number of float operations. Note: Please read the implementation for the math behind it.
+
+Profile:
+node name | # float_ops
+_TFProfRoot (--/2.40k flops)
+  dense/kernel/Initializer/random_uniform (600/1.20k flops)
+    dense/kernel/Initializer/random_uniform/mul (600/600 flops)
+    dense/kernel/Initializer/random_uniform/sub (1/1 flops)
+  dense/kernel/Regularizer/Square (600/600 flops)
+  dense/kernel/Regularizer/Sum (599/599 flops)
+  dense/kernel/Regularizer/mul (1/1 flops)
+  gradients/sparse_softmax_cross_entropy_loss/value_grad/Neg (1/1 flops)
+  gradients/sparse_softmax_cross_entropy_loss/value_grad/mul (1/1 flops)
+  sparse_softmax_cross_entropy_loss/num_present/Equal (1/1 flops)
+
+======================End of Report==========================
+Training with 10/30 workers ---
+sum of K (set==2) 24058 (30,)
+try user num: 30, feasible:False None
+try user num: 29, feasible:False None
+try user num: 28, feasible:False None
+try user num: 27, feasible:False None
+try user num: 26, feasible:False None
+try user num: 25, feasible:False None
+try user num: 24, feasible:False None
+try user num: 23, feasible:False None
+try user num: 22, feasible:False None
+try user num: 21, feasible:False None
+try user num: 20, feasible:False None
+try user num: 19, feasible:False None
+try user num: 18, feasible:False None
+try user num: 17, feasible:False None
+try user num: 16, feasible:False None
+try user num: 15, feasible:False None
+try user num: 14, feasible:False None
+try user num: 13, feasible:False None
+try user num: 12, feasible:False None
+try user num: 11, feasible:False None
+try user num: 10, feasible:True [ 0.249832+0.j       -0.225892-0.150309j  0.772145-0.046531j
+  0.064085+0.074851j -0.130382+0.488755j]
+WARNING:tensorflow:From /home/aig/NailIt/FedProx/flearn/models/synthetic/mclr.py:58: Variable.load (from tensorflow.python.ops.variables) is deprecated and will be removed in a future version.
+Instructions for updating:
+Prefer Variable.assign which has equivalent behavior in 2.X.
+2022-11-17 20:43:14.720844: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublas.so.10
+At round 0 accuracy: 0.035977859778597784
+At round 0 training accuracy: 0.035104166666666665
+At round 0 training loss: 4.849575720814367
+At round 1 accuracy: 0.4215867158671587
+At round 1 training accuracy: 0.40729166666666666
+At round 1 training loss: 1.7534197504570086
+At round 2 accuracy: 0.41697416974169743
+At round 2 training accuracy: 0.40010416666666665
+At round 2 training loss: 1.7245151234169802
+At round 3 accuracy: 0.4261992619926199
+At round 3 training accuracy: 0.4113541666666667
+At round 3 training loss: 1.6593571505198876
+At round 4 accuracy: 0.42343173431734316
+At round 4 training accuracy: 0.43041666666666667
+At round 4 training loss: 1.6731751560171446
+At round 5 accuracy: 0.4354243542435424
+At round 5 training accuracy: 0.44645833333333335
+At round 5 training loss: 1.7020683235488832
+At round 6 accuracy: 0.4575645756457565
+At round 6 training accuracy: 0.4471875
+At round 6 training loss: 1.5857356068491937
+At round 7 accuracy: 0.4806273062730627
+At round 7 training accuracy: 0.4507291666666667
+At round 7 training loss: 1.5180845293837288
+At round 8 accuracy: 0.477859778597786
+At round 8 training accuracy: 0.45208333333333334
+At round 8 training loss: 1.5026001749311884
+At round 9 accuracy: 0.4714022140221402
+At round 9 training accuracy: 0.48895833333333333
+At round 9 training loss: 1.489756164799134
+At round 10 accuracy: 0.496309963099631
+At round 10 training accuracy: 0.5203125
+At round 10 training loss: 1.439901477973908
+At round 11 accuracy: 0.5212177121771218
+At round 11 training accuracy: 0.5433333333333333
+At round 11 training loss: 1.3959199989711244
+At round 12 accuracy: 0.5092250922509225
+At round 12 training accuracy: 0.5403125
+At round 12 training loss: 1.4245250352161627
+At round 13 accuracy: 0.5055350553505535
+At round 13 training accuracy: 0.5272916666666667
+At round 13 training loss: 1.439915913126121
+At round 14 accuracy: 0.496309963099631
+At round 14 training accuracy: 0.5254166666666666
+At round 14 training loss: 1.4408967954913776
+At round 15 accuracy: 0.5009225092250923
+At round 15 training accuracy: 0.5336458333333334
+At round 15 training loss: 1.4331629885112245
+At round 16 accuracy: 0.5424354243542435
+At round 16 training accuracy: 0.5451041666666666
+At round 16 training loss: 1.3838006071622173
+At round 17 accuracy: 0.5359778597785978
+At round 17 training accuracy: 0.56875
+At round 17 training loss: 1.3816008848510684
+At round 18 accuracy: 0.544280442804428
+At round 18 training accuracy: 0.568125
+At round 18 training loss: 1.356492446095993
+At round 19 accuracy: 0.5415129151291513
+At round 19 training accuracy: 0.5747916666666667
+At round 19 training loss: 1.3266164026285212
+At round 20 accuracy: 0.5452029520295203
+At round 20 training accuracy: 0.5755208333333334
+At round 20 training loss: 1.340543457971265
+At round 21 accuracy: 0.5470479704797048
+At round 21 training accuracy: 0.5769791666666667
+At round 21 training loss: 1.3059278636984528
+At round 22 accuracy: 0.5415129151291513
+At round 22 training accuracy: 0.5470833333333334
+At round 22 training loss: 1.3002280010220906
+At round 23 accuracy: 0.5535055350553506
+At round 23 training accuracy: 0.5792708333333333
+At round 23 training loss: 1.2852923624403774
+At round 24 accuracy: 0.540590405904059
+At round 24 training accuracy: 0.5822916666666667
+At round 24 training loss: 1.2959649275181193
+At round 25 accuracy: 0.559040590405904
+At round 25 training accuracy: 0.5783333333333334
+At round 25 training loss: 1.2690386558013658
+At round 26 accuracy: 0.5608856088560885
+At round 26 training accuracy: 0.5838541666666667
+At round 26 training loss: 1.2439482755151887
+At round 27 accuracy: 0.5562730627306273
+At round 27 training accuracy: 0.588125
+At round 27 training loss: 1.247887034645925
+At round 28 accuracy: 0.5498154981549815
+At round 28 training accuracy: 0.5886458333333333
+At round 28 training loss: 1.2562861994033059
+At round 29 accuracy: 0.5544280442804428
+At round 29 training accuracy: 0.5884375
+At round 29 training loss: 1.2624975515839953
+At round 30 accuracy: 0.5535055350553506
+At round 30 training accuracy: 0.5883333333333334
+At round 30 training loss: 1.243177562666436
+At round 31 accuracy: 0.5544280442804428
+At round 31 training accuracy: 0.591875
+At round 31 training loss: 1.244725171873967
+At round 32 accuracy: 0.5544280442804428
+At round 32 training accuracy: 0.5904166666666667
+At round 32 training loss: 1.2470345752996703
+At round 33 accuracy: 0.5544280442804428
+At round 33 training accuracy: 0.5894791666666667
+At round 33 training loss: 1.250685318534573
+At round 34 accuracy: 0.5581180811808119
+At round 34 training accuracy: 0.5919791666666666
+At round 34 training loss: 1.2502875931871433
+At round 35 accuracy: 0.5507380073800738
+At round 35 training accuracy: 0.5914583333333333
+At round 35 training loss: 1.2537094351897637
+At round 36 accuracy: 0.5627306273062731
+At round 36 training accuracy: 0.59625
+At round 36 training loss: 1.226272200147311
+At round 37 accuracy: 0.5627306273062731
+At round 37 training accuracy: 0.5959375
+At round 37 training loss: 1.2311297357206543
+At round 38 accuracy: 0.5682656826568265
+At round 38 training accuracy: 0.5969791666666666
+At round 38 training loss: 1.2205763371102512
+At round 39 accuracy: 0.5701107011070111
+At round 39 training accuracy: 0.5723958333333333
+At round 39 training loss: 1.2140151976359388
+At round 40 accuracy: 0.5756457564575646
+At round 40 training accuracy: 0.5728125
+At round 40 training loss: 1.2009991679775218
+At round 41 accuracy: 0.5738007380073801
+At round 41 training accuracy: 0.601875
+At round 41 training loss: 1.185495726969093
+At round 42 accuracy: 0.5784132841328413
+At round 42 training accuracy: 0.5798958333333334
+At round 42 training loss: 1.1822214627328018
+At round 43 accuracy: 0.5728782287822878
+At round 43 training accuracy: 0.6026041666666667
+At round 43 training loss: 1.170004412221412
+At round 44 accuracy: 0.5784132841328413
+At round 44 training accuracy: 0.5623958333333333
+At round 44 training loss: 1.1868340850062669
+At round 45 accuracy: 0.5710332103321033
+At round 45 training accuracy: 0.5519791666666667
+At round 45 training loss: 1.1932234993825357
+At round 46 accuracy: 0.5756457564575646
+At round 46 training accuracy: 0.5576041666666667
+At round 46 training loss: 1.1814938453957438
+At round 47 accuracy: 0.5940959409594095
+At round 47 training accuracy: 0.5889583333333334
+At round 47 training loss: 1.1304431941049795
+At round 48 accuracy: 0.584870848708487
+At round 48 training accuracy: 0.6141666666666666
+At round 48 training loss: 1.1215140096625935
+At round 49 accuracy: 0.584870848708487
+At round 49 training accuracy: 0.6139583333333334
+At round 49 training loss: 1.1256426075690735
+At round 50 accuracy: 0.5867158671586716
+At round 50 training accuracy: 0.6138541666666667
+At round 50 training loss: 1.1327471185848117
+At round 51 accuracy: 0.5811808118081181
+At round 51 training accuracy: 0.6141666666666666
+At round 51 training loss: 1.1168816329725086
+At round 52 accuracy: 0.5857933579335793
+At round 52 training accuracy: 0.6202083333333334
+At round 52 training loss: 1.1035611297562717
+At round 53 accuracy: 0.5867158671586716
+At round 53 training accuracy: 0.6169791666666666
+At round 53 training loss: 1.1085478314850479
+At round 54 accuracy: 0.5904059040590406
+At round 54 training accuracy: 0.6213541666666667
+At round 54 training loss: 1.093899446722741
+At round 55 accuracy: 0.5922509225092251
+At round 55 training accuracy: 0.6255208333333333
+At round 55 training loss: 1.0860843335868169
+At round 56 accuracy: 0.5950184501845018
+At round 56 training accuracy: 0.6276041666666666
+At round 56 training loss: 1.0773529011849314
+At round 57 accuracy: 0.5950184501845018
+At round 57 training accuracy: 0.6240625
+At round 57 training loss: 1.0673039635115613
+At round 58 accuracy: 0.5950184501845018
+At round 58 training accuracy: 0.6309375
+At round 58 training loss: 1.051477655892571
+At round 59 accuracy: 0.6005535055350554
+At round 59 training accuracy: 0.629375
+At round 59 training loss: 1.059756292545547
+At round 60 accuracy: 0.6042435424354243
+At round 60 training accuracy: 0.6204166666666666
+At round 60 training loss: 1.0500214400266608
+At round 61 accuracy: 0.6033210332103321
+At round 61 training accuracy: 0.6261458333333333
+At round 61 training loss: 1.0412607882916927
+At round 62 accuracy: 0.6051660516605166
+At round 62 training accuracy: 0.6213541666666667
+At round 62 training loss: 1.0380622761758664
+At round 63 accuracy: 0.6079335793357934
+At round 63 training accuracy: 0.6283333333333333
+At round 63 training loss: 1.0268164080629747
+At round 64 accuracy: 0.6042435424354243
+At round 64 training accuracy: 0.6348958333333333
+At round 64 training loss: 1.0285970296369245
+At round 65 accuracy: 0.6014760147601476
+At round 65 training accuracy: 0.6346875
+At round 65 training loss: 1.0331687331851571
+At round 66 accuracy: 0.6070110701107011
+At round 66 training accuracy: 0.6390625
+At round 66 training loss: 1.0158491475135087
+At round 67 accuracy: 0.6051660516605166
+At round 67 training accuracy: 0.641875
+At round 67 training loss: 1.0046269441892703
+At round 68 accuracy: 0.6042435424354243
+At round 68 training accuracy: 0.6394791666666667
+At round 68 training loss: 1.010987607271721
+At round 69 accuracy: 0.6023985239852399
+At round 69 training accuracy: 0.6402083333333334
+At round 69 training loss: 0.9960662548461308
+At round 70 accuracy: 0.6060885608856088
+At round 70 training accuracy: 0.64125
+At round 70 training loss: 1.0031497756826382
+At round 71 accuracy: 0.6079335793357934
+At round 71 training accuracy: 0.6438541666666666
+At round 71 training loss: 0.9943204337265342
+At round 72 accuracy: 0.6088560885608856
+At round 72 training accuracy: 0.6411458333333333
+At round 72 training loss: 0.9837789454590529
+At round 73 accuracy: 0.6116236162361623
+At round 73 training accuracy: 0.645
+At round 73 training loss: 0.9710236019082368
+At round 74 accuracy: 0.6153136531365314
+At round 74 training accuracy: 0.639375
+At round 74 training loss: 0.971004691037039
+At round 75 accuracy: 0.6190036900369004
+At round 75 training accuracy: 0.6114583333333333
+At round 75 training loss: 0.990346392809103
+At round 76 accuracy: 0.6171586715867159
+At round 76 training accuracy: 0.649375
+At round 76 training loss: 0.9599891976018746
+At round 77 accuracy: 0.6263837638376384
+At round 77 training accuracy: 0.6432291666666666
+At round 77 training loss: 0.9617349672255416
+At round 78 accuracy: 0.6180811808118081
+At round 78 training accuracy: 0.6452083333333334
+At round 78 training loss: 0.9568405222147703
+At round 79 accuracy: 0.6300738007380073
+At round 79 training accuracy: 0.6405208333333333
+At round 79 training loss: 0.9512326590716839
+At round 80 accuracy: 0.6273062730627307
+At round 80 training accuracy: 0.6373958333333334
+At round 80 training loss: 0.9527362354223927
+At round 81 accuracy: 0.6263837638376384
+At round 81 training accuracy: 0.6479166666666667
+At round 81 training loss: 0.9420079959308107
+At round 82 accuracy: 0.6300738007380073
+At round 82 training accuracy: 0.6379166666666667
+At round 82 training loss: 0.9478673036334415
+At round 83 accuracy: 0.6282287822878229
+At round 83 training accuracy: 0.6565625
+At round 83 training loss: 0.9343324563683321
+At round 84 accuracy: 0.6217712177121771
+At round 84 training accuracy: 0.6554166666666666
+At round 84 training loss: 0.9406826824819048
+At round 85 accuracy: 0.6254612546125461
+At round 85 training accuracy: 0.6585416666666667
+At round 85 training loss: 0.9361506580406179
+At round 86 accuracy: 0.6263837638376384
+At round 86 training accuracy: 0.6545833333333333
+At round 86 training loss: 0.934881571525087
+At round 87 accuracy: 0.6226937269372693
+At round 87 training accuracy: 0.6565625
+At round 87 training loss: 0.93584833447511
+At round 88 accuracy: 0.6236162361623616
+At round 88 training accuracy: 0.6558333333333334
+At round 88 training loss: 0.92847410618638
+At round 89 accuracy: 0.6254612546125461
+At round 89 training accuracy: 0.6584375
+At round 89 training loss: 0.9208543799848606
+At round 90 accuracy: 0.6226937269372693
+At round 90 training accuracy: 0.6604166666666667
+At round 90 training loss: 0.924768407928447
+At round 91 accuracy: 0.6263837638376384
+At round 91 training accuracy: 0.6604166666666667
+At round 91 training loss: 0.9152550471853464
+At round 92 accuracy: 0.6254612546125461
+At round 92 training accuracy: 0.6613541666666667
+At round 92 training loss: 0.9184553037583828
+At round 93 accuracy: 0.6282287822878229
+At round 93 training accuracy: 0.660625
+At round 93 training loss: 0.9164020045567304
+At round 94 accuracy: 0.6263837638376384
+At round 94 training accuracy: 0.665
+At round 94 training loss: 0.906765570283557
+At round 95 accuracy: 0.6282287822878229
+At round 95 training accuracy: 0.6663541666666667
+At round 95 training loss: 0.900519533144931
+At round 96 accuracy: 0.6291512915129152
+At round 96 training accuracy: 0.6685416666666667
+At round 96 training loss: 0.8953255102752398
+At round 97 accuracy: 0.6300738007380073
+At round 97 training accuracy: 0.6694791666666666
+At round 97 training loss: 0.8907172889107218
+At round 98 accuracy: 0.6300738007380073
+At round 98 training accuracy: 0.6697916666666667
+At round 98 training loss: 0.8878843688126653
+At round 99 accuracy: 0.6319188191881919
+At round 99 training accuracy: 0.6728125
+At round 99 training loss: 0.8834684375363092
+At round 100 accuracy: 0.6328413284132841
+At round 100 training accuracy: 0.6729166666666667
+At round 100 training loss: 0.8888373863138258
+At round 101 accuracy: 0.6346863468634686
+At round 101 training accuracy: 0.6726041666666667
+At round 101 training loss: 0.8859697897266596
+At round 102 accuracy: 0.6365313653136532
+At round 102 training accuracy: 0.6753125
+At round 102 training loss: 0.8826679975135873
+At round 103 accuracy: 0.6374538745387454
+At round 103 training accuracy: 0.6773958333333333
+At round 103 training loss: 0.8780849232214193
+At round 104 accuracy: 0.6346863468634686
+At round 104 training accuracy: 0.6744791666666666
+At round 104 training loss: 0.8837269286531955
+At round 105 accuracy: 0.6337638376383764
+At round 105 training accuracy: 0.6739583333333333
+At round 105 training loss: 0.8813496180002888
+At round 106 accuracy: 0.6346863468634686
+At round 106 training accuracy: 0.671875
+At round 106 training loss: 0.8791010212649901
+At round 107 accuracy: 0.6346863468634686
+At round 107 training accuracy: 0.6732291666666667
+At round 107 training loss: 0.8819636591337621
+At round 108 accuracy: 0.6402214022140221
+At round 108 training accuracy: 0.6714583333333334
+At round 108 training loss: 0.8790421470534057
+At round 109 accuracy: 0.6374538745387454
+At round 109 training accuracy: 0.6729166666666667
+At round 109 training loss: 0.8817881338732938
+At round 110 accuracy: 0.6356088560885609
+At round 110 training accuracy: 0.6765625
+At round 110 training loss: 0.8754646209875743
+At round 111 accuracy: 0.6374538745387454
+At round 111 training accuracy: 0.6740625
+At round 111 training loss: 0.873481792708238
+At round 112 accuracy: 0.6374538745387454
+At round 112 training accuracy: 0.6748958333333334
+At round 112 training loss: 0.875374100022018
+At round 113 accuracy: 0.6346863468634686
+At round 113 training accuracy: 0.67375
+At round 113 training loss: 0.8786754033155739
+At round 114 accuracy: 0.6392988929889298
+At round 114 training accuracy: 0.6778125
+At round 114 training loss: 0.8691709994059056
+At round 115 accuracy: 0.6392988929889298
+At round 115 training accuracy: 0.6775
+At round 115 training loss: 0.8726400507676104
+At round 116 accuracy: 0.6420664206642066
+At round 116 training accuracy: 0.6798958333333334
+At round 116 training loss: 0.8682404174034795
+At round 117 accuracy: 0.6383763837638377
+At round 117 training accuracy: 0.6772916666666666
+At round 117 training loss: 0.8715656490406642
+At round 118 accuracy: 0.6356088560885609
+At round 118 training accuracy: 0.6751041666666666
+At round 118 training loss: 0.8750051630598803
+At round 119 accuracy: 0.6420664206642066
+At round 119 training accuracy: 0.678125
+At round 119 training loss: 0.868606799930955
+At round 120 accuracy: 0.6429889298892989
+At round 120 training accuracy: 0.6794791666666666
+At round 120 training loss: 0.865233420956259
+At round 121 accuracy: 0.6420664206642066
+At round 121 training accuracy: 0.6802083333333333
+At round 121 training loss: 0.864772630808875
+At round 122 accuracy: 0.6429889298892989
+At round 122 training accuracy: 0.6790625
+At round 122 training loss: 0.8611618009923647
+At round 123 accuracy: 0.6411439114391144
+At round 123 training accuracy: 0.6790625
+At round 123 training loss: 0.8590851791482419
+At round 124 accuracy: 0.6420664206642066
+At round 124 training accuracy: 0.67875
+At round 124 training loss: 0.8581265004041294
+At round 125 accuracy: 0.6411439114391144
+At round 125 training accuracy: 0.6813541666666667
+At round 125 training loss: 0.8601665015053004
+At round 126 accuracy: 0.6420664206642066
+At round 126 training accuracy: 0.6820833333333334
+At round 126 training loss: 0.8568478278381129
+At round 127 accuracy: 0.6466789667896679
+At round 127 training accuracy: 0.6816666666666666
+At round 127 training loss: 0.8530230668094009
+At round 128 accuracy: 0.6439114391143912
+At round 128 training accuracy: 0.6830208333333333
+At round 128 training loss: 0.8558871727281561
+At round 129 accuracy: 0.6411439114391144
+At round 129 training accuracy: 0.6813541666666667
+At round 129 training loss: 0.8585343317811688
+At round 130 accuracy: 0.6411439114391144
+At round 130 training accuracy: 0.6808333333333333
+At round 130 training loss: 0.8608101475673418
+At round 131 accuracy: 0.6420664206642066
+At round 131 training accuracy: 0.6817708333333333
+At round 131 training loss: 0.8569771961929897
+At round 132 accuracy: 0.6420664206642066
+At round 132 training accuracy: 0.6801041666666666
+At round 132 training loss: 0.8596248075707505
+At round 133 accuracy: 0.6420664206642066
+At round 133 training accuracy: 0.6789583333333333
+At round 133 training loss: 0.8570057064325859
+At round 134 accuracy: 0.6411439114391144
+At round 134 training accuracy: 0.6814583333333334
+At round 134 training loss: 0.8547795135031144
+At round 135 accuracy: 0.6457564575645757
+At round 135 training accuracy: 0.68125
+At round 135 training loss: 0.8526671800917636
+At round 136 accuracy: 0.6448339483394834
+At round 136 training accuracy: 0.6802083333333333
+At round 136 training loss: 0.8547548710554839
+At round 137 accuracy: 0.6411439114391144
+At round 137 training accuracy: 0.6826041666666667
+At round 137 training loss: 0.8506906707553814
+At round 138 accuracy: 0.6411439114391144
+At round 138 training accuracy: 0.6819791666666667
+At round 138 training loss: 0.8523986812960357
+At round 139 accuracy: 0.6402214022140221
+At round 139 training accuracy: 0.6808333333333333
+At round 139 training loss: 0.8546273965574801
+At round 140 accuracy: 0.6383763837638377
+At round 140 training accuracy: 0.6807291666666667
+At round 140 training loss: 0.8508297180415442
+At round 141 accuracy: 0.6429889298892989
+At round 141 training accuracy: 0.6769791666666667
+At round 141 training loss: 0.8530987651428829
+At round 142 accuracy: 0.6457564575645757
+At round 142 training accuracy: 0.6690625
+At round 142 training loss: 0.8586180744909991
+At round 143 accuracy: 0.6476014760147601
+At round 143 training accuracy: 0.6707291666666667
+At round 143 training loss: 0.8564709184567133
+At round 144 accuracy: 0.6476014760147601
+At round 144 training accuracy: 0.6716666666666666
+At round 144 training loss: 0.8531758798379451
+At round 145 accuracy: 0.6522140221402214
+At round 145 training accuracy: 0.6704166666666667
+At round 145 training loss: 0.8531305712368339
+At round 146 accuracy: 0.6457564575645757
+At round 146 training accuracy: 0.6853125
+At round 146 training loss: 0.8412568750636031
+At round 147 accuracy: 0.6439114391143912
+At round 147 training accuracy: 0.6840625
+At round 147 training loss: 0.8408725882538904
+At round 148 accuracy: 0.6420664206642066
+At round 148 training accuracy: 0.685625
+At round 148 training loss: 0.8416736857965589
+At round 149 accuracy: 0.6411439114391144
+At round 149 training accuracy: 0.6847916666666667
+At round 149 training loss: 0.8440773787970344
+At round 150 accuracy: 0.6402214022140221
+At round 150 training accuracy: 0.6839583333333333
+At round 150 training loss: 0.8463713659284016
+At round 151 accuracy: 0.6448339483394834
+At round 151 training accuracy: 0.6879166666666666
+At round 151 training loss: 0.8367934925295413
+At round 152 accuracy: 0.6429889298892989
+At round 152 training accuracy: 0.686875
+At round 152 training loss: 0.8389145340025425
+At round 153 accuracy: 0.6466789667896679
+At round 153 training accuracy: 0.68875
+At round 153 training loss: 0.8362216812434295
+At round 154 accuracy: 0.6476014760147601
+At round 154 training accuracy: 0.6879166666666666
+At round 154 training loss: 0.8388841486908496
+At round 155 accuracy: 0.6466789667896679
+At round 155 training accuracy: 0.6876041666666667
+At round 155 training loss: 0.8382051376222323
+At round 156 accuracy: 0.6448339483394834
+At round 156 training accuracy: 0.68875
+At round 156 training loss: 0.8349715180912366
+At round 157 accuracy: 0.6457564575645757
+At round 157 training accuracy: 0.688125
+At round 157 training loss: 0.8370954792574048
+At round 158 accuracy: 0.6439114391143912
+At round 158 training accuracy: 0.6875
+At round 158 training loss: 0.8395660982777675
+At round 159 accuracy: 0.6402214022140221
+At round 159 training accuracy: 0.6879166666666666
+At round 159 training loss: 0.8381670111045242
+At round 160 accuracy: 0.6485239852398524
+At round 160 training accuracy: 0.6907291666666666
+At round 160 training loss: 0.8344478199568888
+At round 161 accuracy: 0.6503690036900369
+At round 161 training accuracy: 0.69
+At round 161 training loss: 0.8314092224277556
+At round 162 accuracy: 0.6595940959409594
+At round 162 training accuracy: 0.6889583333333333
+At round 162 training loss: 0.8302945164839427
+At round 163 accuracy: 0.6522140221402214
+At round 163 training accuracy: 0.69125
+At round 163 training loss: 0.8309820137514422
+At round 164 accuracy: 0.6540590405904059
+At round 164 training accuracy: 0.6915625
+At round 164 training loss: 0.8253198368723194
+At round 165 accuracy: 0.6540590405904059
+At round 165 training accuracy: 0.6910416666666667
+At round 165 training loss: 0.8274790257867426
+At round 166 accuracy: 0.6531365313653137
+At round 166 training accuracy: 0.6917708333333333
+At round 166 training loss: 0.824897198829179
+At round 167 accuracy: 0.6522140221402214
+At round 167 training accuracy: 0.6921875
+At round 167 training loss: 0.8223848609874645
+At round 168 accuracy: 0.6512915129151291
+At round 168 training accuracy: 0.69
+At round 168 training loss: 0.8247263205330819
+At round 169 accuracy: 0.6549815498154982
+At round 169 training accuracy: 0.69125
+At round 169 training loss: 0.8232949773532648
+At round 170 accuracy: 0.6549815498154982
+At round 170 training accuracy: 0.6925
+At round 170 training loss: 0.8213766127203902
+At round 171 accuracy: 0.6549815498154982
+At round 171 training accuracy: 0.6935416666666666
+At round 171 training loss: 0.8181539911528428
+At round 172 accuracy: 0.6568265682656826
+At round 172 training accuracy: 0.6928125
+At round 172 training loss: 0.8204177374610057
+At round 173 accuracy: 0.6549815498154982
+At round 173 training accuracy: 0.6932291666666667
+At round 173 training loss: 0.8183652776541809
+At round 174 accuracy: 0.6577490774907749
+At round 174 training accuracy: 0.6933333333333334
+At round 174 training loss: 0.8156395888670037
+At round 175 accuracy: 0.6605166051660517
+At round 175 training accuracy: 0.695625
+At round 175 training loss: 0.8138559915404767
+At round 176 accuracy: 0.6549815498154982
+At round 176 training accuracy: 0.695625
+At round 176 training loss: 0.8150261877849698
+At round 177 accuracy: 0.6614391143911439
+At round 177 training accuracy: 0.6998958333333334
+At round 177 training loss: 0.8090456280329575
+At round 178 accuracy: 0.6642066420664207
+At round 178 training accuracy: 0.7002083333333333
+At round 178 training loss: 0.8069798108469695
+At round 179 accuracy: 0.6577490774907749
+At round 179 training accuracy: 0.7003125
+At round 179 training loss: 0.8072746753226966
+At round 180 accuracy: 0.6605166051660517
+At round 180 training accuracy: 0.703125
+At round 180 training loss: 0.8033521016376713
+At round 181 accuracy: 0.6642066420664207
+At round 181 training accuracy: 0.70375
+At round 181 training loss: 0.8003133716620505
+At round 182 accuracy: 0.6669741697416974
+At round 182 training accuracy: 0.7022916666666666
+At round 182 training loss: 0.8015985516055176
+At round 183 accuracy: 0.6595940959409594
+At round 183 training accuracy: 0.7034375
+At round 183 training loss: 0.8019585432174305
+At round 184 accuracy: 0.6669741697416974
+At round 184 training accuracy: 0.7036458333333333
+At round 184 training loss: 0.800637057783703
+At round 185 accuracy: 0.6642066420664207
+At round 185 training accuracy: 0.7032291666666667
+At round 185 training loss: 0.8020173911067346
+At round 186 accuracy: 0.6623616236162362
+At round 186 training accuracy: 0.7013541666666666
+At round 186 training loss: 0.8040415518451483
+At round 187 accuracy: 0.6577490774907749
+At round 187 training accuracy: 0.6997916666666667
+At round 187 training loss: 0.8063114905605714
+At round 188 accuracy: 0.6642066420664207
+At round 188 training accuracy: 0.7001041666666666
+At round 188 training loss: 0.8060171440988779
+At round 189 accuracy: 0.6605166051660517
+At round 189 training accuracy: 0.7002083333333333
+At round 189 training loss: 0.8072016827203333
+At round 190 accuracy: 0.665129151291513
+At round 190 training accuracy: 0.6986458333333333
+At round 190 training loss: 0.8055506433608631
+At round 191 accuracy: 0.6595940959409594
+At round 191 training accuracy: 0.6997916666666667
+At round 191 training loss: 0.8061108072598775
+At round 192 accuracy: 0.6595940959409594
+At round 192 training accuracy: 0.6988541666666667
+At round 192 training loss: 0.8048379497913023
+At round 193 accuracy: 0.6595940959409594
+At round 193 training accuracy: 0.6984375
+At round 193 training loss: 0.8066524154351403
+At round 194 accuracy: 0.6586715867158671
+At round 194 training accuracy: 0.6985416666666666
+At round 194 training loss: 0.8084766813305517
+At round 195 accuracy: 0.6577490774907749
+At round 195 training accuracy: 0.6964583333333333
+At round 195 training loss: 0.8104153218430777
+At round 196 accuracy: 0.6577490774907749
+At round 196 training accuracy: 0.6978125
+At round 196 training loss: 0.8091698403966924
+At round 197 accuracy: 0.6605166051660517
+At round 197 training accuracy: 0.699375
+At round 197 training loss: 0.8072508316921692
+At round 198 accuracy: 0.6660516605166051
+At round 198 training accuracy: 0.7005208333333334
+At round 198 training loss: 0.804843520540744
+At round 199 accuracy: 0.6586715867158671
+At round 199 training accuracy: 0.6989583333333333
+At round 199 training loss: 0.8060049848196407
+At round 200 accuracy: 0.6577490774907749
+At round 200 training accuracy: 0.698125

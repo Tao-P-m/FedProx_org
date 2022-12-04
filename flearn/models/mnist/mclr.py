@@ -83,6 +83,7 @@ class Model(object):
                         feed_dict={self.features: X, self.labels: y})
         soln = self.get_params()
         comp = num_epochs * (len(data['y'])//batch_size) * batch_size * self.flops
+        print("If use this mclr from mnist...")
         return soln, comp
 
     def solve_iters(self, data, num_iters=1, batch_size=32):

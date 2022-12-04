@@ -99,12 +99,15 @@ class Metrics(object):
         self.bytes_read = {c.id: [0] * num_rounds for c in clients}      
         self.accuracies = []
         self.train_accuracies = []
+        self.mse = [] # 19/08/2022 for aggregation error
+        self.closs = {c.id: [0] * num_rounds for c in clients} # client loss
 
-    def update(self, rnd, cid, stats):
+    def update(self, rnd, cid, stats, closs):
         bytes_w, comp, bytes_r = stats
         self.bytes_written[cid][rnd] += bytes_w
         self.client_computations[cid][rnd] += comp
         self.bytes_read[cid][rnd] += bytes_r
+        self.closs[cid][rnd] += closs
 
     def write(self):
         metrics = {}
@@ -120,6 +123,7 @@ class Metrics(object):
         metrics['client_computations'] = self.client_computations
         metrics['bytes_written'] = self.bytes_written
         metrics['bytes_read'] = self.bytes_read
+        metrics['client_loss'] = self.closs
         metrics_dir = os.path.join('out', self.params['dataset'], 'metrics_{}_{}_{}_{}_{}.json'.format(self.params['seed'], self.params['optimizer'], self.params['learning_rate'], self.params['num_epochs'], self.params['mu']))
 	#os.mkdir(os.path.join('out', self.params['dataset']))
         if not os.path.exists(os.path.join('out', self.params['dataset'])):

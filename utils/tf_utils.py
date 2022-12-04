@@ -1,5 +1,6 @@
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior() 
 
-import tensorflow as tf
 
 def __num_elems(shape):
     '''Returns the number of elements in the given shape
@@ -13,7 +14,7 @@ def __num_elems(shape):
     tot_elems = 1
     for s in shape:
         tot_elems *= int(s)
-    return tot_elems
+    return tot_elems # np.prob(shape)
 
 def graph_size(graph):
     '''Returns the size of the given graph in bytes
@@ -32,7 +33,7 @@ def graph_size(graph):
     with graph.as_default():
         vs = tf.trainable_variables()
         for v in vs:
-            tot_elems = __num_elems(v.shape)
+            tot_elems = __num_elems(v.shape) # np.prob(v.shape) quit using numpy here
             dtype_size = int(v.dtype.size)
             var_size = tot_elems * dtype_size
             tot_size += var_size

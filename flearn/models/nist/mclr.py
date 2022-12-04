@@ -1,5 +1,6 @@
 import numpy as np
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior() 
 from tqdm import trange
 
 from flearn.utils.model_utils import batch_data, batch_data_multiple_iters
@@ -11,7 +12,6 @@ class Model(object):
     '''
     Assumes that images are 28px by 28px
     '''
-    
     def __init__(self, num_classes, optimizer, seed=1):
 
         # params
@@ -37,7 +37,7 @@ class Model(object):
         """Model function for Logistic Regression."""
         features = tf.placeholder(tf.float32, shape=[None, 784], name='features')
         labels = tf.placeholder(tf.int64, shape=[None,], name='labels')
-        logits = tf.layers.dense(inputs=features, units=self.num_classes, kernel_regularizer=tf.contrib.layers.l2_regularizer(0.001))
+        logits = tf.layers.dense(inputs=features, units=self.num_classes, kernel_regularizer=tf.keras.regularizers.l2(0.001))
         predictions = {
             "classes": tf.argmax(input=logits, axis=1),
                 "probabilities": tf.nn.softmax(logits, name="softmax_tensor")
@@ -82,6 +82,7 @@ class Model(object):
                     self.sess.run(self.train_op, feed_dict={self.features: X, self.labels: y})
         soln = self.get_params()
         comp = num_epochs * (len(data['y'])//batch_size) * batch_size * self.flops
+        print("If use this mclr from nist...")
         return soln, comp
 
     def solve_iters(self, data, num_iters=1, batch_size=32):
