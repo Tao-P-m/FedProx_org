@@ -77,4 +77,3 @@ def setup_clients(train_data_dir, test_data_dir, model=None):
         groups = [None for _ in users]
     all_clients = [Client(u, g, train_data[u], test_data[u], model) for u, g in zip(users, groups)]
     return all_clients
-

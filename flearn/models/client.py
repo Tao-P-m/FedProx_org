@@ -75,5 +75,6 @@ class Client(object):
             tot_correct: total #correct predictions
             test_samples: int
         '''
+        #print("see: eval_data", self.eval_data)
         tot_correct, loss = self.model.test(self.eval_data)
         return tot_correct, self.test_samples

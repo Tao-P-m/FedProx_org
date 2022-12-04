@@ -99,6 +99,7 @@ class Metrics(object):
         self.bytes_read = {c.id: [0] * num_rounds for c in clients}      
         self.accuracies = []
         self.train_accuracies = []
+        self.mse = [] # 19/08/2022 for aggregation error
 
     def update(self, rnd, cid, stats):
         bytes_w, comp, bytes_r = stats

@@ -12,7 +12,7 @@ class BaseFedarated(object):
         for key, val in params.items(): setattr(self, key, val);
 
         # create worker nodes
-        tf.reset_default_graph()
+        tf.compat.v1.reset_default_graph()
         self.client_model = learner(*params['model_params'], self.inner_opt, self.seed)
         self.clients = self.setup_clients(dataset, self.client_model)
         print('{} Clients in Total'.format(len(self.clients)))
@@ -30,7 +30,7 @@ class BaseFedarated(object):
         Return:
             list of Clients
         '''
-        users, groups, train_data, test_data = dataset
+        users, groups, train_data, test_data = dataset # tbd: remove empty files
         if len(groups) == 0:
             groups = [None for _ in users]
         all_clients = [Client(u, g, train_data[u], test_data[u], model) for u, g in zip(users, groups)]
@@ -42,7 +42,7 @@ class BaseFedarated(object):
         losses = []
 
         for c in self.clients:
-            ct, cl, ns = c.train_error_and_loss() 
+            ct, cl, ns = c.train_error_and_loss() # tol, loss, sample_size
             tot_correct.append(ct*1.0)
             num_samples.append(ns)
             losses.append(cl*1.0)
